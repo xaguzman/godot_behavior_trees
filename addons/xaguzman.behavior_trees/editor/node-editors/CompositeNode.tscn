@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/xaguzman.behavior_trees/editor/node-editors/CompositeNode.gd" type="Script" id=1]
+[ext_resource path="res://addons/xaguzman.behavior_trees/editor/node-editors/CompositeNodeChild.tscn" type="PackedScene" id=2]
+
+[node name="CompositeNode" type="GraphNode"]
+margin_right = 32.0
+margin_bottom = 29.0
+custom_constants/close_offset = 18
+custom_constants/separation = 5
+title = "Selector"
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 0.00392157, 0.447059, 0.709804, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 0.00392157, 0.447059, 0.709804, 1 )
+slot/1/right_enabled = true
+slot/1/right_type = 0
+slot/1/right_color = Color( 0.00392157, 0.447059, 0.709804, 1 )
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color( 0.00392157, 0.447059, 0.709804, 1 )
+slot/2/right_enabled = true
+slot/2/right_type = 0
+slot/2/right_color = Color( 0.00392157, 0.447059, 0.709804, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+type = "Selector"
+
+[node name="AddNew" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 85.0
+margin_bottom = 44.0
+text = "Add "
+
+[node name="CompositeNodeChild" parent="." instance=ExtResource( 2 )]
+
+[node name="CompositeNodeChild2" parent="." instance=ExtResource( 2 )]
+margin_top = 74.0
+margin_bottom = 94.0
+index = 1
+[connection signal="pressed" from="AddNew" to="." method="_on_AddNew_pressed"]
+[connection signal="removed" from="CompositeNodeChild" to="." method="_on_ChildNode_removed"]
+[connection signal="removed" from="CompositeNodeChild2" to="." method="_on_ChildNode_removed"]

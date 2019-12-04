@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/xaguzman.behavior_trees/editor/BehaviorTreeEditor.gd" type="Script" id=1]
+[ext_resource path="res://addons/xaguzman.behavior_trees/editor/AddItemButton.gd" type="Script" id=2]
+
+[node name="BehaviorTreeEditor" type="GraphEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 250 )
+right_disconnects = true
+snap_distance = 10
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddItemButton" type="MenuButton" parent="."]
+margin_left = 227.0
+margin_top = 12.0
+margin_right = 276.0
+margin_bottom = 32.0
+text = "Add..."
+items = [ "Composites", null, 0, false, false, -1, 0, null, "", true, "Sequence", null, 0, false, false, 10, 0, null, "", false, "Selector", null, 0, false, false, 11, 0, null, "", false, "Parallel", null, 0, false, false, 12, 0, null, "", false, "Leaves", null, 0, false, false, -1, 0, null, "", true, "Action", null, 0, false, false, 20, 0, null, "", false, "Decorators", null, 0, false, false, -1, 0, null, "", true, "Delay", null, 0, false, false, 30, 0, null, "", false ]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="connection_from_empty" from="." to="." method="_on_BehaviorTreeEditor_connection_from_empty"]
+[connection signal="connection_request" from="." to="." method="_on_BehaviorTreeEditor_connection_request"]
+[connection signal="connection_to_empty" from="." to="." method="_on_BehaviorTreeEditor_connection_to_empty"]
+[connection signal="disconnection_request" from="." to="." method="_on_BehaviorTreeEditor_disconnection_request"]
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="popup_closed" from="AddItemButton" to="." method="_on_AddItemButton_popup_closed"]

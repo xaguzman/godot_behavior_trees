@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/xaguzman.behavior_trees/editor/node-editors/CompositeNodeChild.gd" type="Script" id=1]
+
+[node name="CompositeNodeChild" type="HBoxContainer"]
+margin_left = 16.0
+margin_top = 49.0
+margin_right = 85.0
+margin_bottom = 69.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Delete" type="Button" parent="."]
+margin_right = 19.0
+margin_bottom = 20.0
+text = "x"
+
+[node name="LabelIndex" type="Label" parent="."]
+margin_left = 23.0
+margin_top = 3.0
+margin_right = 69.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+text = "0"
+align = 2
+[connection signal="pressed" from="Delete" to="." method="_on_Delete_pressed"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/xaguzman.behavior_trees/editor/node-editors/DelayDecorator.gd" type="Script" id=1]
+
+[node name="DelayDecorator" type="GraphNode"]
+margin_right = 170.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 170, 0 )
+title = "Delay"
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 0.00392157, 0.447059, 0.709804, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 0.00392157, 0.447059, 0.709804, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 154.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_right = 72.0
+margin_bottom = 14.0
+text = "Delay Time"
+
+[node name="Value" type="TextEdit" parent="HBoxContainer"]
+margin_left = 76.0
+margin_right = 138.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/line_spacing = 0
+text = "0.5"
+[connection signal="text_changed" from="HBoxContainer/Value" to="." method="_on_Value_text_changed"]

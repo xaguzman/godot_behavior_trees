@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "BTEditorGlobals",
+"language": "GDScript",
+"path": "res://addons/xaguzman.behavior_trees/editor/BTEditorGlobals.gd"
+}, {
+"base": "Reference",
+"class": "BehaviorTreeGlobals",
+"language": "GDScript",
+"path": "res://addons/xaguzman.behavior_trees/core/bt-globals.gd"
+} ]
+_global_script_class_icons={
+"BTEditorGlobals": "",
+"BehaviorTreeGlobals": ""
+}
+
+[application]
+
+config/name="behavior-trees"
+config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "xaguzman.behavior_trees" )
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

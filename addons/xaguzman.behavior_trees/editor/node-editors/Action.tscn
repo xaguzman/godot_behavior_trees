@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/xaguzman.behavior_trees/editor/node-editors/Action.gd" type="Script" id=1]
+
+[node name="Action" type="GraphNode"]
+margin_right = 32.0
+margin_bottom = 30.0
+title = "Action"
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 102.0
+margin_bottom = 44.0
+
+[node name="TextEdit" type="TextEdit" parent="HBoxContainer"]
+margin_bottom = 20.0
+text = "Path to Script"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_left = 4.0
+margin_right = 86.0
+margin_bottom = 20.0
+text = "Load Script"
