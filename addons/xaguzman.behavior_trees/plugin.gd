@@ -35,26 +35,26 @@ func edit(object: Object):
         return
     
     if behavior_editor_container.get_child_count() > 0:
-        print_debug("behavior_editor_container children count = %s " % str(behavior_editor_container.get_child_count()))
+#        print_debug("behavior_editor_container children count = %s " % str(behavior_editor_container.get_child_count()))
         var current_editor = behavior_editor_container.get_child(0)
         
         print_debug("packing %s " % _selected_tree.name)
         print_debug("with editor %s, %s " % [current_editor.name, str(typeof(current_editor))])
         var pack_result = _selected_tree.editor.pack(current_editor)
         
-        ResourceSaver.save("res://addons/xaguzman.behavior_trees/%s.tscn" % _selected_tree.name, _selected_tree.editor)
-        print_debug("packing result %s" % pack_result)
+#        ResourceSaver.save("res://addons/xaguzman.behavior_trees/%s.tscn" % _selected_tree.name, _selected_tree.editor)
+#        print_debug("packing result %s" % pack_result)
         
         behavior_editor_container.remove_child(current_editor)
         current_editor.queue_free()    
     
+    _selected_tree = object
     if not object:
         return
     
-    var bt = object as BehaviorTreeNode    
-    
-    behavior_editor_container.add_child(bt.editor_node)   
-    _selected_tree = bt
+#    var bt = object as BehaviorTreeNode    
+#
+    behavior_editor_container.add_child(object.editor_node)   
     behavior_editor_container.update()
 
 #func get_state():

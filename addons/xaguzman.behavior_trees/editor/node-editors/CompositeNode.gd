@@ -14,6 +14,7 @@ func set_composite_type(val: String)-> void:
     title = val
 
 func _ready():
+    set_meta("composite_node_tag", "")
     _update_slots()
 
 func _update_slots():
@@ -34,6 +35,6 @@ func _on_ChildNode_removed(index):
     var list_index = index + 1
     var removed_item = get_child(list_index)
     removed_item.queue_free()
-    emit_signal("deleted_node")
+    emit_signal("deleted_node", index)
     for i in range(list_index, get_child_count(), 1):
         get_child(i).index -= 1    

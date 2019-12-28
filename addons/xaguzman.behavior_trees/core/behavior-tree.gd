@@ -8,6 +8,9 @@ export (PackedScene) var editor setget ,get_editor
 
 var editor_node : GraphEdit setget ,get_editor_node
 
+var root_node
+
+
 func get_editor()->PackedScene:
     if not editor:
         print_debug("getting empty editor")
